@@ -1,0 +1,33 @@
+@jwtg = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyLCJleHAiOjE2NDMzODA4NjB9.vytYT-gBREvsFV9Sy4qXbZPVlYj7dn5U0eoIFpjOpYw
+
+@jwtc = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjozLCJleHAiOjE2NDMzODEwMzh9._1ZZyOd1mJGo2PkY1OMGwCtsdF5_k-fazoZl5oMNm5w
+
+@jwtb = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2NDMzODEwNzF9.ZGz0RmfdI6LriCJ28TJSzBGrbzrS1JZboIrKjhG9Kpk
+
+
+### Users create (signup)
+POST http://localhost:3000/users
+Content-Type: application/json
+
+{
+  "name": "Chyance",
+  "email": "chance@gmail.com",
+  "phone_number": "81834232123",
+  "password_confirmation": "password",
+  "password": "password"
+}
+
+### SESSIONS CREATE (login)
+POST http://localhost:3000/sessions
+Content-Type: application/json
+
+{
+  "email": "bill@gmail.com",
+  "password": "password"
+}
+
+### CURRENT_USER SHOW
+GET http://localhost:3000/users
+Authorization: Bearer {{ jwtb }}
+
+
